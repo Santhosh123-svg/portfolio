@@ -1,0 +1,178 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===============================
+   ANIMATIONS
+================================ */
+
+/* Fade Up */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide From Right */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Floating icons */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* Chatbot glow pulse */
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.15);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* ===============================
+   ANIMATION UTIL CLASSES
+================================ */
+
+.animate-fadeIn {
+  animation: fadeIn 0.9s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 1s ease-out forwards;
+}
+
+/* ===============================
+   BUTTON STYLES
+================================ */
+
+.btn-glow {
+  transition: all 0.3s ease;
+}
+
+.btn-glow:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.25);
+}
+
+.btn-outline {
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: black;
+  transform: translateY(-3px);
+}
+
+/* ===============================
+   SOCIAL ICONS (FLOAT)
+================================ */
+
+.icon-float {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: float 3s ease-in-out infinite;
+  transition: color 0.3s, transform 0.3s;
+  color: var(--textMuted);
+}
+
+.icon-float:hover {
+  color: var(--primary);
+  transform: translateY(-4px);
+}
+
+/* ===============================
+   SOCIAL ICONS (HOME)
+================================ */
+
+.social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--textMuted);
+  background: rgba(255, 255, 255, 0.06);
+  transition: all 0.35s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-6px) scale(1.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  color: black;
+}
+
+/* Platform colors */
+.social-icon.instagram:hover {
+  background: linear-gradient(135deg, #f58529, #dd2a7b, #8134af);
+}
+
+.social-icon.linkedin:hover {
+  background: #0a66c2;
+}
+
+.social-icon.whatsapp:hover {
+  background: #25d366;
+}
+
+/* ===============================
+   CHATBOT BUTTON
+================================ */
+
+.chatbot-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f5d78e, #e6b85c); /* creamy highlight */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.35),
+    0 0 0 6px rgba(255, 255, 255, 0.05);
+  animation: pulseGlow 2.5s infinite;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.chatbot-btn:hover {
+  transform: scale(1.12);
+}
+/* ===============================
+   HIDE CHATBOT IN FULLSCREEN
+================================ */
+
+.hide-chatbot .chatbot-btn {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8);
+}
