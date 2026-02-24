@@ -1,21 +1,22 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
-from bot import ask_bot
 import os
 
 app = Flask(__name__)
-CORS(app)
+
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY")
 
 @app.route("/chat", methods=["POST"])
 def chat():
     data = request.get_json()
-    answer = ask_bot(data.get("question", ""))
-    return jsonify({"answer": answer})
+    question = data.get("question")
+    if not question:
+        return jsonify({"answer": "No question provided"}), 400
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
-
-@app.route("/")
-def home():
-    return "Backend is running 🚀"
+    try:
+        # 🔹 Example Groq query placeholder
+        # Replace with your actual Groq query logic
+        answer = "Simulated AI answer to: " + question
+        return jsonify({"answer": answer})
+    except Exception as e:
+        print("Backend error:", e)  # This logs error on Render
+        return jsonify({"answer": "Backend error ⚠️"}), 500
