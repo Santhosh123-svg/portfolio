@@ -1,0 +1,127 @@
+Name:
+Santhosh S (Sandy)
+
+Core Identity:
+Sandy is a calm, focused, and self-driven individual.
+He believes strongly in discipline, consistency, and long-term growth.
+He prefers depth over noise, learning over shortcuts, and progress over comfort.
+He values time, effort, and honesty in both personal and professional life.
+
+Character:
+- Quiet but confident
+- Observes deeply before reacting
+- Speaks less, but with purpose
+- Very patient while learning new things
+- Never gives up once he commits to a goal
+- Emotionally mature and realistic
+- Strong sense of self-respect and boundaries
+- Learns from failures instead of avoiding them
+- Believes silence and hard work speak louder than words
+
+Mindset:
+Sandy believes skills are the real power that can transform life.
+He focuses on improving himself every single day, even in small ways.
+He avoids unnecessary distractions and comparisons.
+He works silently and lets results speak.
+He trusts the process more than motivation and understands growth takes time.
+
+Daily Routine:
+
+Morning:
+- Wakes up with a clear intention for the day
+- Mentally plans tasks and priorities
+- Spends time learning or thinking about improvement
+- Focuses on self-growth before external noise
+
+Daytime:
+- Works on coding, development, or improving technical skills
+- Builds projects hands-on instead of only consuming content
+- Practices logical thinking and problem-solving
+- Learns through mistakes and real experience
+
+Evening:
+- Reviews what he learned during the day
+- Fixes errors and improves existing work
+- Refactors code or enhances project quality
+- Reflects on progress made
+
+Night:
+- Thinks about long-term goals and vision
+- Plans next steps for personal and career growth
+- Clears his mind before resting
+- Sleeps with purpose, not stress
+
+Professional Profile:
+Sandy is a Full Stack Developer and AI Chatbot Developer.
+He builds modern, responsive, and scalable web applications.
+He enjoys creating intelligent systems that feel natural and human.
+He focuses on clean UI, efficient backend logic, and smooth user experience.
+
+Role:
+Full Stack Developer | AI Chatbot Developer
+
+About Me:
+I am Sandy, a passionate and self-taught full stack developer.
+I enjoy building modern websites, AI-powered chatbots,
+and interactive user interfaces that solve real problems.
+I love working with React, Python, Flask, and AI tools,
+and I constantly push myself to learn better approaches.
+
+Skills:
+- HTML, CSS, JavaScript
+- React.js
+- Python
+- Flask
+- AI Chatbot Development
+- REST APIs
+- Git & GitHub
+- Problem Solving
+
+Projects:
+1) AI Chatbot Portfolio Website
+   - Built using React frontend and Flask backend
+   - Integrated an AI chatbot for real-time interaction
+   - Designed to represent personal skills and mindset
+
+2) Bakery Website (Sandy’s Sweet Nest)
+   - Modern and visually rich UI
+   - Smooth animations and transitions
+   - Online ordering system with clean user flow
+
+Experience:
+- Building personal and client-based projects
+- Hands-on experience with frontend and backend integration
+- Strong focus on performance, structure, and maintainability
+- Continuous learning through real-world implementation
+
+Strengths:
+- Strong logical and analytical thinking
+- High level of patience and focus
+- Self-learning ability
+- Consistent and disciplined work ethic
+- Problem-solving mindset
+
+Weaknesses (Self-aware):
+- Tends to overthink sometimes
+- Very perfection-oriented
+- Takes extra time to ensure quality
+
+Life Philosophy:
+"Improve a little every day. Results will follow."
+"Consistency beats motivation."
+
+Communication Style:
+Sandy prefers clear, honest, and respectful communication.
+He avoids unnecessary drama, hype, or shortcuts.
+He values meaningful conversations over small talk.
+
+Personal Values:
+- Discipline
+- Consistency
+- Self-respect
+- Growth mindset
+- Long-term vision
+
+Contact:
+- Email: valarmathisanthosh33@gmail.com
+- WhatsApp: 6374122294
