@@ -26,15 +26,11 @@ export default function ChatbotPanel() {
     try {
       const res = await fetch(`${API_URL}/chat`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: text }),
       });
 
-      if (!res.ok) {
-        throw new Error(`Server error: ${res.status}`);
-      }
+      if (!res.ok) throw new Error(`Server error: ${res.status}`);
 
       const data = await res.json();
 
@@ -47,6 +43,7 @@ export default function ChatbotPanel() {
     } catch (error) {
       console.error("Chatbot error:", error);
 
+      // 🟡 Show friendly backend wake-up message
       setMessages((prev) => [
         ...prev,
         {
@@ -81,9 +78,7 @@ export default function ChatbotPanel() {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      sendMessage(input);
-    }
+    if (e.key === "Enter") sendMessage(input);
   };
 
   return (
@@ -106,20 +101,18 @@ export default function ChatbotPanel() {
           <div
             key={i}
             className={`p-3 rounded-xl max-w-[85%]
-            ${
-              m.type === "user"
-                ? "ml-auto bg-primary text-black"
-                : "bg-white/10"
-            }`}
+              ${
+                m.type === "user"
+                  ? "ml-auto bg-primary text-black"
+                  : "bg-white/10"
+              }`}
           >
             {m.text}
           </div>
         ))}
 
         {loading && (
-          <div className="bg-white/10 p-3 rounded-xl w-fit">
-            Typing...
-          </div>
+          <div className="bg-white/10 p-3 rounded-xl w-fit">Typing...</div>
         )}
       </div>
 
@@ -137,10 +130,7 @@ export default function ChatbotPanel() {
           <Mic />
         </button>
 
-        <button
-          onClick={() => sendMessage(input)}
-          disabled={loading}
-        >
+        <button onClick={() => sendMessage(input)} disabled={loading}>
           <Send />
         </button>
       </div>
