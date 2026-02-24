@@ -14,7 +14,7 @@ export default function Home() {
             <div className="relative h-[340px] w-full md:h-[420px] rounded-2xl overflow-hidden">
               <div
                 className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: "url('src/assets/Sandy4.jpg')" }}
+                style={{ backgroundImage: "url('/images/Sandy4.jpg')" }}
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-bg" />
             </div>
