@@ -8,7 +8,9 @@ export default function ChatbotPanel() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // ✅ Correct ENV usage with fallback
+  // Track if backend wake-up message has been shown
+  const [backendWaking, setBackendWaking] = useState(false);
+
   const API_URL =
     import.meta.env.VITE_API_URL ||
     "https://portfolio-backend-4uka.onrender.com";
@@ -40,17 +42,18 @@ export default function ChatbotPanel() {
       };
 
       setMessages((prev) => [...prev, botMessage]);
+      setBackendWaking(false); // Backend is up, reset flag
     } catch (error) {
       console.error("Chatbot error:", error);
 
-      // 🟡 Show friendly backend wake-up message
-      setMessages((prev) => [
-        ...prev,
-        {
-          type: "bot",
-          text: "Backend waking up... please wait ⏳",
-        },
-      ]);
+      if (!backendWaking) {
+        // Show this message only once
+        setMessages((prev) => [
+          ...prev,
+          { type: "bot", text: "Backend waking up... please wait ⏳" },
+        ]);
+        setBackendWaking(true);
+      }
     } finally {
       setLoading(false);
     }
