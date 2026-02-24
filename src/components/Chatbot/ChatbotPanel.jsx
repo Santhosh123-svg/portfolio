@@ -6,29 +6,44 @@ export default function ChatbotPanel() {
   const { open, setOpen } = useChatbot();
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const API_URL = import.meta.env.VITE_API_URL;
 
   if (!open) return null;
 
   const sendMessage = async (text) => {
-    if (!text) return;
+    if (!text.trim() || loading) return;
 
-    setMessages((m) => [...m, { type: "user", text }]);
+    const userMessage = { type: "user", text };
+    setMessages((prev) => [...prev, userMessage]);
     setInput("");
+    setLoading(true);
 
     try {
-      const res = await fetch("https://portfolio-backend-4uka.onrender.com/chat", {
+      const res = await fetch(`${API_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: text }),
       });
 
+      if (!res.ok) throw new Error("Server error");
+
       const data = await res.json();
-      setMessages((m) => [...m, { type: "bot", text: data.answer }]);
-    } catch {
-      setMessages((m) => [
-        ...m,
-        { type: "bot", text: "Server not running ⚠️" },
+
+      const botMessage = {
+        type: "bot",
+        text: data.answer || "No response from AI 🤖",
+      };
+
+      setMessages((prev) => [...prev, botMessage]);
+    } catch (error) {
+      setMessages((prev) => [
+        ...prev,
+        { type: "bot", text: "Server not responding ⚠️" },
       ]);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -38,7 +53,7 @@ export default function ChatbotPanel() {
       window.SpeechRecognition || window.webkitSpeechRecognition;
 
     if (!SpeechRecognition) {
-      alert("Voice not supported");
+      alert("Voice not supported in this browser");
       return;
     }
 
@@ -46,17 +61,25 @@ export default function ChatbotPanel() {
     recognition.lang = "en-US";
 
     recognition.onresult = (e) => {
-      sendMessage(e.results[0][0].transcript);
+      const transcript = e.results[0][0].transcript;
+      sendMessage(transcript);
     };
 
     recognition.start();
   };
 
-  return (
-    <div className="fixed inset-y-0 left-0 w-full sm:w-[380px]
-                    bg-bg border-r border-white/10 z-50
-                    flex flex-col animate-slideIn">
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      sendMessage(input);
+    }
+  };
 
+  return (
+    <div
+      className="fixed inset-y-0 left-0 w-full sm:w-[380px]
+                 bg-bg border-r border-white/10 z-50
+                 flex flex-col animate-slideIn"
+    >
       {/* HEADER */}
       <div className="flex items-center gap-3 p-4 border-b border-white/10">
         <button onClick={() => setOpen(false)}>
@@ -71,13 +94,21 @@ export default function ChatbotPanel() {
           <div
             key={i}
             className={`p-3 rounded-xl max-w-[85%]
-            ${m.type === "user"
-              ? "ml-auto bg-primary text-black"
-              : "bg-white/10"}`}
+            ${
+              m.type === "user"
+                ? "ml-auto bg-primary text-black"
+                : "bg-white/10"
+            }`}
           >
             {m.text}
           </div>
         ))}
+
+        {loading && (
+          <div className="bg-white/10 p-3 rounded-xl w-fit">
+            Typing...
+          </div>
+        )}
       </div>
 
       {/* INPUT */}
@@ -85,7 +116,8 @@ export default function ChatbotPanel() {
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask about Santhosh..."
+          onKeyDown={handleKeyPress}
+          placeholder="Ask about Sandy..."
           className="flex-1 bg-transparent outline-none"
         />
 
@@ -93,7 +125,10 @@ export default function ChatbotPanel() {
           <Mic />
         </button>
 
-        <button onClick={() => sendMessage(input)}>
+        <button
+          onClick={() => sendMessage(input)}
+          disabled={loading}
+        >
           <Send />
         </button>
       </div>
