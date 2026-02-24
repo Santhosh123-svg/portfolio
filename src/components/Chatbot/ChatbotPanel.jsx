@@ -8,7 +8,10 @@ export default function ChatbotPanel() {
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_URL = import.meta.env.VITE_API_URL;
+  // ✅ Correct ENV usage with fallback
+  const API_URL =
+    import.meta.env.VITE_API_URL ||
+    "https://portfolio-backend-4uka.onrender.com";
 
   if (!open) return null;
 
@@ -21,13 +24,17 @@ export default function ChatbotPanel() {
     setLoading(true);
 
     try {
-      const res = await fetch(`${VITE_API_URL}/chat`, {
+      const res = await fetch(`${API_URL}/chat`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ question: text }),
       });
 
-      if (!res.ok) throw new Error("Server error");
+      if (!res.ok) {
+        throw new Error(`Server error: ${res.status}`);
+      }
 
       const data = await res.json();
 
@@ -38,9 +45,14 @@ export default function ChatbotPanel() {
 
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
+      console.error("Chatbot error:", error);
+
       setMessages((prev) => [
         ...prev,
-        { type: "bot", text: "Server not responding ⚠️" },
+        {
+          type: "bot",
+          text: "Backend waking up... please wait ⏳",
+        },
       ]);
     } finally {
       setLoading(false);
