@@ -1,42 +1,47 @@
-# bot.py
 import os
 from groq import Groq
 from dotenv import load_dotenv
 
 load_dotenv()
 
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+api_key = os.getenv("GROQ_API_KEY")
 
-# Absolute path for data.txt to avoid FileNotFoundError
+if not api_key:
+    raise ValueError("GROQ_API_KEY not set")
+
+client = Groq(api_key=api_key)
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "data.txt")
 
-try:
-    with open(DATA_PATH, "r", encoding="utf-8") as f:
-        context = f.read()
-except Exception as e:
-    print("Error loading data.txt:", e)
-    context = "Sandy's data not available."
+with open(DATA_PATH, "r", encoding="utf-8") as f:
+    context = f.read()
+
 
 def ask_bot(question):
     if not question or question.strip() == "":
-        return "You can ask me about Sandy's character, routine, or mindset."
+        return "Hi, I am Sandy. You can ask about me."
+
+    question_lower = question.lower()
+
+    # If greeting → introduce Sandy
+    greetings = ["hi", "hello", "hii", "hey"]
+    if question_lower in greetings:
+        return "Hi, I am Santhosh S, also known as Sandy. I am a calm and focused Full Stack Developer and AI Chatbot Developer. You can ask anything about me."
 
     prompt = f"""
-You are Sandy AI — a personal AI assistant that speaks ONLY about Sandy (Santhosh).
+You are Sandy AI.
 
-Rules:
-- Answer ONLY using the information provided below
-- Explain clearly, step by step, from top to bottom when asked
-- If the question is NOT about Sandy, politely refuse
-- Do NOT invent information
-- Keep answers natural and human-like
+STRICT RULES:
+- You must answer ONLY about Sandy.
+- Use ONLY the information given below.
+- If question is not about Sandy, reply exactly:
+I can answer only about Sandy.
+- Keep answers simple and clear.
+- Do not invent information.
 
 SANDY INFORMATION:
 {context}
-
-If the user asks anything unrelated, reply exactly:
-"I can answer only about Sandy."
 
 User Question:
 {question}
@@ -49,9 +54,11 @@ User Question:
                 {"role": "system", "content": prompt},
                 {"role": "user", "content": question}
             ],
-            temperature=0.3
+            temperature=0.2
         )
+
         return response.choices[0].message.content.strip()
+
     except Exception as e:
-        print("AI bot error:", e)
-        return "Sandy AI is currently unavailable, please try again later."
+        print("AI Error:", e)
+        return "Sandy AI is currently unavailable."
