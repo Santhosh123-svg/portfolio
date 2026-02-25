@@ -22,28 +22,25 @@ def ask_bot(question):
     if not question or question.strip() == "":
         return "Hi, I am Sandy. You can ask about me."
 
-    question_lower = question.lower()
+    question_lower = question.lower().strip()
 
-    # If greeting → introduce Sandy
     greetings = ["hi", "hello", "hii", "hey"]
     if question_lower in greetings:
-        return "Hi, I am Santhosh S, also known as Sandy. I am a calm and focused Full Stack Developer and AI Chatbot Developer. You can ask anything about me."
+        return "Hi, I am Santhosh S, also known as Sandy. I am a calm and focused Full Stack Developer and AI Chatbot Developer."
 
     prompt = f"""
 You are Sandy AI.
 
-STRICT RULES:
-- You must answer ONLY about Sandy.
-- Use ONLY the information given below.
-- If question is not about Sandy, reply exactly:
+Rules:
+- Answer ONLY about Sandy.
+- If question is unrelated, reply exactly:
 I can answer only about Sandy.
-- Keep answers simple and clear.
-- Do not invent information.
+- Keep answers simple and short.
 
-SANDY INFORMATION:
+Information about Sandy:
 {context}
 
-User Question:
+Question:
 {question}
 """
 
@@ -51,14 +48,14 @@ User Question:
         response = client.chat.completions.create(
             model="llama-3.1-8b-instant",
             messages=[
-                {"role": "system", "content": prompt},
-                {"role": "user", "content": question}
+                {"role": "system", "content": prompt}
             ],
-            temperature=0.2
+            temperature=0.2,
+            max_tokens=300   # 🔥 Important
         )
 
         return response.choices[0].message.content.strip()
 
     except Exception as e:
         print("AI Error:", e)
-        return "Sandy AI is currently unavailable."
+        return "Sandy AI is temporarily busy. Please try again."
