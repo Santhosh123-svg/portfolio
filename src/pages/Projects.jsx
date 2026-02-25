@@ -9,17 +9,13 @@ import {
   ExternalLink
 } from "lucide-react";
 
-/* ===============================
-   PROJECT DATA
-================================ */
-
 const projects = [
   {
     id: 1,
     title: "Personal Portfolio Website",
     icon: <Sparkles />,
-    video: "https://youtu.be/Yy-R2XTGsnE",
-    live: "https://your-portfolio-link.com",
+    video: "https://www.youtube.com/embed/Yy-R2XTGsnE",
+    live: "https://sweet-duckanoo-645848.netlify.app/",
     tech: ["HTML", "CSS"],
     description:
       "This is my very first website and the foundation of my web development journey."
@@ -74,50 +70,46 @@ const projects = [
   }
 ];
 
-/* ===============================
-   COMPONENT
-================================ */
-
 export default function Projects() {
   const navigate = useNavigate();
   const [active, setActive] = useState(null);
 
   return (
-    <section className="min-h-screen pt-28 px-6 bg-gradient-to-b from-black via-[#0f172a] to-black text-white">
+    <section className="min-h-screen pt-24 px-4 sm:px-6 bg-gradient-to-b from-black via-[#0f172a] to-black text-white">
       <div className="max-w-7xl mx-auto">
 
         {/* BACK BUTTON */}
         <button
           onClick={() => navigate("/")}
-          className="fixed left-6 top-28 w-11 h-11
+          className="fixed left-4 top-20 sm:top-28 w-10 h-10
                      flex items-center justify-center
                      rounded-xl bg-white/10 backdrop-blur-md
                      border border-white/10
                      hover:border-primary hover:text-primary
-                     hover:scale-110 transition-all duration-300"
+                     hover:scale-110 transition-all duration-300 z-50"
         >
-          <ArrowLeft size={20} />
+          <ArrowLeft size={18} />
         </button>
 
         {/* TITLE */}
-        <div className="text-center mb-16 animate-fadeIn">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-wide">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 tracking-wide">
             Cinematic <span className="text-primary">Projects</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
             Click a project and explore the experience visually.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-5 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-12">
 
-          {/* LEFT SIDE PROJECT LIST */}
-          <div className="md:col-span-2 space-y-5">
+          {/* LEFT SIDE */}
+          <div className="md:col-span-2 space-y-4">
             {projects.map((project) => (
               <div
                 key={project.id}
                 onClick={() => setActive(project)}
-                className={`cursor-pointer p-6 rounded-2xl border
+                className={`cursor-pointer p-5 rounded-2xl border
                   transition-all duration-300 backdrop-blur-md
                   ${
                     active?.id === project.id
@@ -125,81 +117,77 @@ export default function Projects() {
                       : "border-white/10 bg-white/5 hover:border-primary hover:scale-105"
                   }`}
               >
-                <div className="flex items-center gap-3 mb-3 text-primary">
+                <div className="flex items-center gap-3 mb-2 text-primary">
                   {project.icon}
-                  <h3 className="font-semibold text-lg">
+                  <h3 className="font-semibold text-base sm:text-lg">
                     {project.title}
                   </h3>
                 </div>
 
-                <p className="text-sm text-gray-400">
+                <p className="text-xs sm:text-sm text-gray-400">
                   {project.tech.join(" • ")}
                 </p>
               </div>
             ))}
           </div>
 
-          {/* RIGHT SIDE CONTENT */}
-          <div className="md:col-span-3 transition-all duration-500">
+          {/* RIGHT SIDE */}
+          <div className="md:col-span-3">
             {!active ? (
-              <div className="h-full flex flex-col items-center justify-center
+              <div className="flex flex-col items-center justify-center
                               text-center bg-white/5 border border-white/10
-                              rounded-2xl p-12">
-                <Film size={50} className="text-primary mb-5 animate-pulse" />
-                <h3 className="text-2xl font-semibold mb-3">
+                              rounded-2xl p-8 sm:p-12">
+                <Film size={40} className="text-primary mb-4 animate-pulse" />
+                <h3 className="text-xl sm:text-2xl font-semibold mb-2">
                   Select a Project
                 </h3>
-                <p className="text-gray-400">
+                <p className="text-gray-400 text-sm sm:text-base">
                   Choose a project to begin the cinematic experience.
                 </p>
               </div>
             ) : (
-              <div className="animate-fadeIn">
+              <div>
 
-                {/* YOUTUBE EMBED */}
-                <div className="relative rounded-2xl overflow-hidden mb-8 shadow-2xl shadow-black/50">
+                {/* Responsive Video */}
+                <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-6 shadow-2xl shadow-black/50">
                   <iframe
                     src={active.video}
                     title={active.title}
                     allowFullScreen
-                    className="w-full h-[360px] rounded-2xl"
+                    className="absolute top-0 left-0 w-full h-full"
                   ></iframe>
                 </div>
 
-                {/* DETAILS */}
-                <h3 className="text-3xl font-bold mb-4">
+                <h3 className="text-2xl sm:text-3xl font-bold mb-4">
                   {active.title}
                 </h3>
 
-                <p className="text-gray-400 leading-relaxed mb-6">
+                <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-6">
                   {active.description}
                 </p>
 
-                {/* TECH STACK */}
-                <div className="flex flex-wrap gap-3 mb-8">
+                <div className="flex flex-wrap gap-3 mb-6">
                   {active.tech.map((t, i) => (
                     <span
                       key={i}
-                      className="px-4 py-2 rounded-lg text-sm
-                                 bg-white/5 border border-white/10
-                                 hover:bg-primary/20 transition"
+                      className="px-3 py-1 text-xs sm:text-sm rounded-lg
+                                 bg-white/5 border border-white/10"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
 
-                {/* LIVE BUTTON */}
                 <a
                   href={active.live}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2
-                             px-6 py-3 rounded-xl
+                             px-5 py-3 rounded-xl
                              bg-primary text-black font-semibold
-                             hover:scale-110 transition-all duration-300"
+                             hover:scale-105 transition-all duration-300"
                 >
-                  Visit Website <ExternalLink size={18} />
+                  Visit Website <ExternalLink size={16} />
                 </a>
 
               </div>
