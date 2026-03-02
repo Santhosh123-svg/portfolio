@@ -11,7 +11,7 @@ export default function ChatbotButton() {
                  w-14 h-14 rounded-full
                  bg-primary text-black
                  flex items-center justify-center
-                 shadow-xl hover:scale-110 transition"
+                 shadow-xl hover:scale-110 transition-all duration-300"
     >
       <MessageCircle />
     </button>

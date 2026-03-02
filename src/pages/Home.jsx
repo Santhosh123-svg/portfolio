@@ -58,7 +58,7 @@ export default function Home() {
               </a>
 
               <a
-                href="/resume.pdf"
+                href="/Resume.pdf"
                 download
                 className="btn-outline flex items-center gap-2 px-6 py-3 border border-primary text-primary rounded-xl"
               >
@@ -77,7 +77,7 @@ export default function Home() {
               </a>
 
               <a
-                href="linkedin.com/in/santhosh-s-88013b319"
+                href="https://www.linkedin.com/in/santhosh-s-88013b319/"
                 target="_blank"
                 className="social-icon linkedin"
               >

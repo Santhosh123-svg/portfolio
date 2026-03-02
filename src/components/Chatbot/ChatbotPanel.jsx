@@ -7,8 +7,6 @@ export default function ChatbotPanel() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
-
-  // Track if backend wake-up message has been shown
   const [backendWaking, setBackendWaking] = useState(false);
 
   const API_URL =
@@ -42,12 +40,11 @@ export default function ChatbotPanel() {
       };
 
       setMessages((prev) => [...prev, botMessage]);
-      setBackendWaking(false); // Backend is up, reset flag
+      setBackendWaking(false);
     } catch (error) {
       console.error("Chatbot error:", error);
 
       if (!backendWaking) {
-        // Show this message only once
         setMessages((prev) => [
           ...prev,
           { type: "bot", text: "Backend waking up... please wait ⏳" },
@@ -110,12 +107,23 @@ export default function ChatbotPanel() {
                   : "bg-white/10"
               }`}
           >
-            {m.text}
+            {m.type === "bot"
+              ? m.text
+                  .split("\n")
+                  .filter((line) => line.trim() !== "")
+                  .map((line, index) => (
+                    <p key={index} className="mb-1">
+                      {line}
+                    </p>
+                  ))
+              : m.text}
           </div>
         ))}
 
         {loading && (
-          <div className="bg-white/10 p-3 rounded-xl w-fit">Typing...</div>
+          <div className="bg-white/10 p-3 rounded-xl w-fit animate-pulse">
+            Typing...
+          </div>
         )}
       </div>
 

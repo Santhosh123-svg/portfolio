@@ -1,16 +1,15 @@
-# server.py
 import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from bot import ask_bot  # ✅ Import your bot.py function
+from bot import ask_bot
 
 app = Flask(__name__)
 
-# ✅ Proper CORS for frontend
 CORS(app, origins=[
-    "https://portfolio-frontend-rsw1.onrender.com",  # change if your frontend URL different
+    "https://portfolio-frontend-rsw1.onrender.com",
     "http://localhost:5173"
 ], supports_credentials=True, methods=["GET", "POST", "OPTIONS"])
+
 
 @app.route("/chat", methods=["POST", "OPTIONS"])
 def chat():
@@ -19,11 +18,15 @@ def chat():
 
     try:
         data = request.get_json()
-        question = data.get("question", "")
-        if not question:
+
+        if not data or "question" not in data:
             return jsonify({"answer": "Please provide a question"}), 400
 
-        # ✅ Call your AI bot function
+        question = data.get("question", "").strip()
+
+        if question == "":
+            return jsonify({"answer": "Please provide a valid question"}), 400
+
         answer = ask_bot(question)
 
         return jsonify({"answer": answer})

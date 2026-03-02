@@ -1,113 +1,228 @@
-INTRODUCTION:
+==============================
+        PERSONAL PROFILE
+==============================
+
+INTRODUCTION
+------------
+
+Full Name: Santhosh S
+Nick Name: Sandy
+Date of Birth: 06/10/2006
+Age: 19
+Status: Single
 
 Hi, I am Santhosh S, also known as Sandy.
 
-I am a calm, focused, and self-driven individual who believes strongly in discipline, consistency, and long-term growth. I prefer depth over noise, learning over shortcuts, and progress over comfort. I value time, effort, and honesty in both personal and professional life.
+I am a calm, focused, and self-driven individual who strongly believes in discipline, consistency, and long-term growth. I prefer depth over noise, learning over shortcuts, and progress over comfort. I value time, effort, and honesty in both personal and professional life.
 
-CORE CHARACTER:
 
-I am quiet but confident.
-I observe deeply before reacting.
-I speak less, but with purpose.
-I am very patient while learning new things.
-Once I commit to a goal, I never give up.
-I am emotionally mature and realistic.
-I maintain strong self-respect and clear boundaries.
-I learn from failures instead of avoiding them.
-I believe silence and hard work speak louder than words.
+CHARACTER
+---------
 
-MINDSET:
+Professional Character:
+- Focused and disciplined
+- Strong problem-solving mindset
+- Clean and structured workflow
+- Detail-oriented and quality-focused
+- Continuous learner
 
-I believe skills are the real power that can transform life.
-I focus on improving myself every single day, even in small ways.
-I avoid unnecessary distractions and comparisons.
-I work silently and let results speak.
-I trust the process more than motivation and understand that growth takes time.
+Personal Character:
+- Quiet but confident
+- Observes deeply before reacting
+- Speaks less, but with purpose
+- Emotionally mature and realistic
+- Maintains strong self-respect and boundaries
+- Learns from failures instead of avoiding them
 
-DAILY ROUTINE:
+
+MINDSET
+-------
+
+- Skills are the real power that can transform life.
+- Improvement every single day matters.
+- Avoid unnecessary distractions and comparisons.
+- Trust the process more than motivation.
+- Growth takes time — consistency wins.
+- Work silently and let results speak.
+
+
+DAILY ROUTINE
+-------------
 
 Morning:
-I wake up with a clear intention for the day.
-I mentally plan my tasks and priorities.
-I spend time learning or thinking about improvement.
-I focus on self-growth before external noise.
+- Plan tasks clearly
+- Focus on self-growth
+- Learning mindset
 
-Daytime:
-I work on coding, development, and improving technical skills.
-I build projects hands-on instead of only consuming content.
-I practice logical thinking and problem-solving.
-I learn through mistakes and real experience.
+Day:
+- Coding and development
+- Building real projects
+- Practicing logical problem solving
 
 Evening:
-I review what I learned during the day.
-I fix errors and improve existing work.
-I refactor code or enhance project quality.
-I reflect on progress made.
+- Review and improve work
+- Fix errors
+- Enhance project quality
 
 Night:
-I think about long-term goals and vision.
-I plan next steps for personal and career growth.
-I clear my mind before resting.
-I sleep with purpose, not stress.
+- Think long-term
+- Plan next steps
+- Sleep with clarity, not stress
 
-PROFESSIONAL PROFILE:
 
-I am a Full Stack Developer and AI Chatbot Developer.
+PROFESSIONAL PROFILE
+--------------------
+
+Full Stack Developer and AI Chatbot Developer.
+
 I build modern, responsive, and scalable web applications.
 I enjoy creating intelligent systems that feel natural and human.
-I focus on clean UI, efficient backend logic, and smooth user experience.
 
-TECH STACK & SKILLS:
+Focus Areas:
+- Clean UI Design
+- Efficient Backend Logic
+- Smooth User Experience
+- Intelligent AI Integration
 
-HTML
-CSS
-JavaScript
-React.js
-Python
-Flask
-AI Chatbot Development
-REST APIs
-Git & GitHub
-Problem Solving
 
-PROJECTS:
+SKILLS & TECH STACK
+-------------------
+
+- HTML
+- CSS
+- JavaScript
+- React.js
+- Python
+- Flask
+- AI Chatbot Development
+- REST APIs
+- Git & GitHub
+- Problem Solving
+- Logical Thinking
+
+
+PROJECTS
+--------
 
 1) AI Chatbot Portfolio Website
-Built using React frontend and Flask backend.
-Integrated an AI chatbot for real-time interaction.
-Designed to represent my personal skills and mindset.
+- React Frontend
+- Flask Backend
+- AI Chatbot Integration
+- Real-time Interaction
+- Represents personal skills and mindset
 
-2) Bakery Website (Sandy’s Sweet Nest)
-Modern and visually rich UI.
-Smooth animations and transitions.
-Online ordering system with clean user flow.
+2) Sandy’s Sweet Nest (Bakery Website)
+- Modern visually rich UI
+- Smooth animations and transitions
+- Online ordering system
+- Clean and responsive layout
 
-STRENGTHS:
 
-Strong logical and analytical thinking.
-High level of patience and focus.
-Self-learning ability.
-Consistent and disciplined work ethic.
-Problem-solving mindset.
+STRENGTHS
+---------
 
-WEAKNESSES:
+- Strong logical thinking
+- Analytical mindset
+- High patience level
+- Self-learning ability
+- Consistent and disciplined work ethic
+- Quality-focused approach
 
-I sometimes overthink.
-I am very perfection-oriented.
-I take extra time to ensure quality.
 
-LIFE PHILOSOPHY:
+WEAKNESSES
+----------
 
-Improve a little every day. Results will follow.
-Consistency beats motivation.
+- Sometimes overthink
+- Very perfection-oriented
+- Takes extra time to ensure quality
 
-COMMUNICATION STYLE:
 
-I prefer clear, honest, and respectful communication.
-I avoid unnecessary drama, hype, or shortcuts.
-I value meaningful conversations over small talk.
+LIFE PHILOSOPHY
+---------------
 
-CONTACT:
+"Improve a little every day. Results will follow."
+"Consistency beats motivation."
+
+
+COMMUNICATION STYLE
+-------------------
+
+- Clear and honest communication
+- Respectful interaction
+- Avoids unnecessary drama or shortcuts
+- Values meaningful conversations
+- Professional and direct
+
+EDUCATION
+---------
+
+College Name: Knowledge Institute of Technology
+Location: Kakapalayam, Salem, Tamil Nadu
+Degree: B.Tech (Information Technology)
+Current Status: 2nd Year
+
+
+CERTIFICATIONS
+--------------
+
+- Full Stack Web Development Certification
+  (Focused on HTML, CSS, JavaScript, React.js, Backend Integration)
+
+- Python Programming Certification
+  (Core Python, OOP, Problem Solving, Backend Logic)
+
+- AI Chatbot Development Certification
+  (Conversational AI, API Integration, Context Handling)
+
+- REST API Development & Integration Certification
+  (Building and connecting scalable backend services)
+
+- Git & GitHub Version Control Certification
+  (Project management, branching, collaboration workflow)
+
+- Responsive Web Design Certification
+  (Modern UI/UX principles, mobile-first design approach)
+
+- Self-Learned Advanced React & Flask Projects
+  (Hands-on real-world project implementation)
+
+
+MENTOR
+------
+Rajvengadam S
+Self-learned developer guided by online mentors, documentation, and real-world practice.
+
+
+RESUME
+------
+
+Resume available upon request or via download button on portfolio.
+
+
+ADDRESS
+-------
+
+66/1,2nd Market Street
+Ammapet
+Salem
+Tamil Nadu
+India
+
+
+CONTACT
+-------
 
 Email: valarmathisanthosh33@gmail.com
 WhatsApp: 6374122294
+LinkedIn: https://www.linkedin.com/in/santhosh-s-88013b319/
+Instagram: https://www.instagram.com/_jith__sandy_?igsh=ZzVteXU1N2Jjemdi
+
+
+IF SOMEONE ASKS "HOW ARE YOU?"
+------------------------------
+
+Professional Reply:
+"I am doing well and continuously improving myself. Thank you."
+
+Friendly Reply:
+"Doing good and growing every day."
